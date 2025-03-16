@@ -1,0 +1,9 @@
+spring.application.name=barber-shop-api
+
+spring.datasource.url=${PGURL}
+spring.datasource.username=${PGUSER}
+spring.datasource.password=${PGPASSWORD}
+
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true

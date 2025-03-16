@@ -1,0 +1,41 @@
+services:
+  app:
+    build:
+      context: .
+    command: bash start-dev.sh
+    environment:
+      PGURL: jdbc:postgresql://db:5432/barber-shop-api
+      PGUSER: barber-shop-api
+      PGPASSWORD: barber-shop-api
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+    volumes:
+      - .:/barber-shop-api:z
+    depends_on:
+      - db
+    networks:
+      - barber-shop-net
+  db:
+    image: postgres:17.4
+    environment:
+      POSTGRES_USER: barber-shop-api
+      POSTGRES_PASSWORD: barber-shop-api
+      POSTGRES_DB: barber-shop-api
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "54320:5432"
+    networks:
+      - barber-shop-net
+
+networks:
+  barber-shop-net:
+    name: barber-shop-net
+    external: true
+
+volumes:
+  db:
+
+
+
