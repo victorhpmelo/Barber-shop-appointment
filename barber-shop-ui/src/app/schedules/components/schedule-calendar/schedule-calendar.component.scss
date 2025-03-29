@@ -1,3 +1,102 @@
 .calendar-card {
   width: 30rem;
+  color:#fed8b1;
+  background-color: #6f4e37;
+}
+
+
+
+.col-6{
+  margin-left: -12px;
+  margin-top: 25px;
+}
+
+::ng-deep {
+  .mdc-text-field--filled.mdc-text-field--disabled {
+    background-color: #a0785a !important; 
+    opacity: 1 !important;
+    border-radius: 5px;
+  }
+
+  .mdc-text-field--filled.mdc-text-field--disabled::before,
+  .mdc-text-field--filled.mdc-text-field--disabled::after {
+    background-color: transparent !important;
+    border-bottom: none !important; 
+  }
+
+  .mdc-text-field__input {
+    color: #dcc0a1 !important; 
+  }
+
+  .mdc-floating-label {
+    color: #dcc0a1 !important;
+  }
+}
+  
+
+::ng-deep mat-calendar {
+  .mat-calendar-body-cell-content {
+    color: #fed8b1 !important; 
+  }
+}
+::ng-deep mat-calendar {
+  .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover 
+  > .mat-calendar-body-cell-content {
+    background-color: #212121 !important;
+  }
+}
+
+.col-12{
+  background-color: #6f4e37;
+}
+
+::ng-deep mat-calendar{
+  .mat-calendar-body-selected {
+    background-color: #414141 !important; 
+  }
+}
+
+::ng-deep mat-calendar{
+  .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover 
+  .mat-calendar-body-cell-content {
+    background-color: #212121 !important;
+  }
+}
+
+::ng-deep mat-option{
+    background-color: #6f4e37!important;
+    color: #fed8b1!important;
+}
+
+
+::ng-deep .mat-mdc-menu-trigger.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base {
+  background-color: #6f4e37 ;
+  color: #fed8b1 ; 
+  border-radius: 5px ;
+  width: 200px;
+  height: 50px;
+  padding: 20px; 
+  border: 1px solid #212121;
+  margin: 4px;
+}
+
+::ng-deep .mat-mdc-menu-trigger.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base:hover {
+  background-color: #fed8b1 !important; 
+  color: #6f4e37 !important;
+}
+
+::ng-deep .mat-mdc-menu-content{
+  background-color: #6f4e37 !important; 
+  color: #fed8b1 !important; 
+  margin: 10px;
+  width: 190px;
+  padding: 2%;
+  border: 1px solid #212121;
+  border-top: none;
+  border-radius: 5px;
+}
+
+::ng-deep .mat-mdc-menu-item:not([disabled]):hover{
+  background-color: #fed8b1 !important; 
+  color: #6f4e37 !important; 
 }

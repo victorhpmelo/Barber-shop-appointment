@@ -7,15 +7,15 @@
                 <div class="col-4">
                     <mat-form-field>
                         <mat-label>Inicio</mat-label>
-                        <input 
-                        matInput 
-                        [matTimepicker]="startAtPicker" 
+                        <input
+                        matInput
+                        [matTimepicker]="startAtPicker"
                         [ngModelOptions]="{updateOn: 'blur'}"
-                        id="startAt" 
-                        name="startAt" 
+                        id="startAt"
+                        name="startAt"
                         #startAtModel="ngModel"
-                        (ngModelChange)="onTimeChange($event)" 
-                        [(ngModel)]="newSchedule.startAt" 
+                        (ngModelChange)="onTimeChange($event)"
+                        [(ngModel)]="newSchedule.startAt"
                         required>
                         <mat-timepicker #startAtPicker />
                         <mat-timepicker-toggle [for]="startAtPicker" matSuffix />
@@ -24,13 +24,12 @@
                 <div class="col-4">
                     <mat-form-field>
                         <mat-label>Término</mat-label>
-                        <input 
-                        matInput 
-                        [matTimepicker]="endAtPicker" 
+                        <input
+                        matInput
+                        [matTimepicker]="endAtPicker"
                         [ngModelOptions]="{updateOn: 'blur'}"
-                        name="endAt" 
-                        id="endAt" 
-                        #endAtModel="ngModel" 
+                        name="endAt"
+                        id="endAt"
                         [(ngModel)]="newSchedule.endAt"
                         disabled="true">
                         <mat-timepicker #endAtPicker />
@@ -39,11 +38,10 @@
                 </div>
                 <div class="col-3">
                     <mat-form-field>
-                        <mat-label>Selecione o client</mat-label>
-                        <mat-select 
-                        name="clientId" 
-                        id="clientId" 
-                        #clientIdModel="ngModel"
+                        <mat-label>Selecione o cliente</mat-label>
+                        <mat-select
+                        name="clientId"
+                        id="clientId"
                         [(ngModel)]="newSchedule.clientId"
                         required>
                             <mat-option *ngFor="let client of clients" [value]="client.id">
@@ -53,10 +51,10 @@
                     </mat-form-field>
                 </div>
                 <div class="col-1">
-                    <button 
-                    type="submit" 
-                    mat-mini-fab 
-                    extended 
+                    <button
+                    type="submit"
+                    mat-mini-fab
+                    extended
                     matTooltip="incluir agendamento no dia"
                     [disabled]="form.invalid">
                         <mat-icon>add</mat-icon>
