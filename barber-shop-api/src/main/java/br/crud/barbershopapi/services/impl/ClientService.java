@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class ClientService  implements IClientService {
+public class ClientService implements IClientService {
 
     private final IClientRepository repository;
     private final IClientQueryService queryService;

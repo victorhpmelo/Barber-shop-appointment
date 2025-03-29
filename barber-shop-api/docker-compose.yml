@@ -1,5 +1,5 @@
 services:
-  app:
+  api:
     build:
       context: .
     command: bash start-dev.sh

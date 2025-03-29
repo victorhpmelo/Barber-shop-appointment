@@ -1,5 +1,6 @@
 package br.crud.barbershopapi.services.query.impl;
 
+import br.crud.barbershopapi.exception.EmailInUseException;
 import br.crud.barbershopapi.exception.NotFoundException;
 import br.crud.barbershopapi.exception.PhoneInUseException;
 import br.crud.barbershopapi.models.ClientModel;
@@ -31,7 +32,7 @@ public class ClientQueryService implements  IClientQueryService {
     @Override
     public void verifyPhone(final String phone) {
         if (repository.existsByPhone(phone)) {
-            var message = "O telefone " + phone + " já está em uso";
+            var message = String.format("O telefone %s já está em uso", phone);
             throw new PhoneInUseException(message);
         }
     }
@@ -40,7 +41,7 @@ public class ClientQueryService implements  IClientQueryService {
     public void verifyPhone(final long id, final String phone) {
         var optional = repository.findByPhone(phone);
         if (optional.isPresent() && !Objects.equals(optional.get().getPhone(), phone)) {
-            var message = "O telefone " + phone + " já está em uso";
+            var message = String.format("O telefone %s já está em uso", phone);
             throw new PhoneInUseException(message);
         }
     }
@@ -48,8 +49,8 @@ public class ClientQueryService implements  IClientQueryService {
     @Override
     public void verifyEmail(final String email) {
         if (repository.existsByEmail(email)) {
-            var message = "O e-mail " + email + " já está em uso";
-            throw new PhoneInUseException(message);
+            var message = String.format("O e-mail  %s  já está em uso",email);
+            throw new EmailInUseException(message);
         }
     }
 
@@ -57,8 +58,8 @@ public class ClientQueryService implements  IClientQueryService {
     public void verifyEmail(final long id, final String email) {
         var optional = repository.findByEmail(email);
         if (optional.isPresent() && !Objects.equals(optional.get().getPhone(), email)) {
-            var message = "O e-mail " + email + " já está em uso";
-            throw new PhoneInUseException(message);
+            var message = String.format("O e-mail  %s  já está em uso",email);
+            throw new EmailInUseException(message);
         }
     }
 }
